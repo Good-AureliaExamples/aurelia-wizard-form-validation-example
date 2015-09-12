@@ -1,0 +1,16 @@
+<template>
+
+  <h2 title.bind="activeStep.title"></h2>
+
+  <div show.bind="!isComplete">
+
+    <compose view-model="${activeStep.path}"></compose>
+    <br>
+    <button class="primary" click.trigger="previousStep()" disabled.bind="isFirstPage">Previous</button>
+    <button class="primary" click.trigger="nextStep()" disabled.bind="isLastPage">Next</button>
+    <br>
+    <button show.bind="isLastPage" class="primary" click.trigger="finish()">Submit</button>
+    <br>
+
+  </div>
+</template>

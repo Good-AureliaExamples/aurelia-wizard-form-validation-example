@@ -8,7 +8,7 @@ var topRoot = './';
 module.exports = {
   top: topRoot,
   root: appRoot,
-  source: [appRoot + '**/*.js', '!**/jspm_packages/**', '!**/config.js', '!**/toolkit/**'],
+  source: [appRoot + '**/*.js', '!**/jspm_packages/**', '!**/config.js'],
   deploy: deployRoot,
   tmp: tmp,
   html: appRoot + '**/*.html',

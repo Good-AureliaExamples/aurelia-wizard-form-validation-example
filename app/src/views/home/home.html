@@ -2,15 +2,26 @@
 
   <h2 title.bind="activeStep.title"></h2>
 
-  <div show.bind="!isComplete">
+  <section show.bind="!isComplete">
 
-    <compose view-model="${activeStep.path}"></compose>
-    <br>
-    <button class="primary" click.trigger="previousStep()" disabled.bind="isFirstPage">Previous</button>
-    <button class="primary" click.trigger="nextStep()" disabled.bind="isLastPage">Next</button>
-    <br>
-    <button show.bind="isLastPage" class="primary" click.trigger="finish()">Submit</button>
-    <br>
+    <form class="pure-form pure-form-stacked">
 
-  </div>
+      <compose view-model="${activeStep.path}"></compose>
+
+      <div>
+        <button click.trigger="previousStep()" disabled.bind="isFirstPage">Previous</button>
+        <button click.trigger="nextStep()" disabled.bind="isLastPage">Next</button>
+        <button click.trigger="finish()" show.bind="isLastPage">Submit</button>
+      </div>
+
+    </form>
+
+  </section>
+
+  <section show.bind="isComplete">
+    Finished...
+    <br>
+    <button class="primary" click.trigger="reset()">Reset</button>
+  </section>
+
 </template>

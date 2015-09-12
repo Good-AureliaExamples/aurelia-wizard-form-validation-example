@@ -1,0 +1,32 @@
+<template>
+
+  <section validate.bind="wizard.validationStep1">
+
+    <fieldset>
+      <legend>Personal details</legend>
+
+      <div class="form-group">
+        <label for="forename">Forename</label>
+        <input id="forename" placeholder="forename" value.bind="wizard.person.forename" validate="person.forename">
+      </div>
+
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input id="surname" placeholder="surname" value.bind="wizard.person.surname" validate="person.surname">
+      </div>
+
+      <div class="form-group">
+        <label for="vertebrate-class">Favourite class of vertebrate</label>
+        <select id="vertebrate-class" value.bind="wizard.person.favouriteVertebrateClass"
+                validate="person.favouriteVertebrateClass">
+          <option value="">Select...</option>
+          <option repeat.for="vertebrate of wizard.vertebrates"
+                  model.bind="vertebrate">${vertebrate.type}</option>
+        </select>
+      </div>
+
+    </fieldset>
+
+  </section>
+
+</template>

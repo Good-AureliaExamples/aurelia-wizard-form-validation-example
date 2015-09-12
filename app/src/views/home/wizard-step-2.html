@@ -1,0 +1,21 @@
+<template>
+
+  <section validate.bind="wizard.validationStep2">
+
+    <fieldset>
+      <legend>Favourites</legend>
+
+      <div class="form-group">
+        <label for="type">Favourite ${wizard.person.favouriteVertebrateClass.type}</label>
+        <select id="type" value.bind="wizard.person.favouriteVertebrateType"
+                validate="person.favouriteVertebrateType">
+          <option value="">Select...</option>
+          <option repeat.for="type of wizard.person.favouriteVertebrateClass.examples">${type}</option>
+        </select>
+      </div>
+
+    </fieldset>
+
+  </section>
+
+</template>

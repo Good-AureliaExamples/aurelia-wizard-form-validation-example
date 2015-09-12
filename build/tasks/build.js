@@ -36,11 +36,6 @@ gulp.task('copy-config', function () {
         .pipe(gulp.dest(paths.output));
 });
 
-gulp.task('copy-toolkit', function () {
-    return gulp.src(paths.root + 'toolkit/**/*')
-        .pipe(gulp.dest(paths.output + 'toolkit/'));
-});
-
 gulp.task('build-less', function () {
     return gulp.src(paths.less)
         .pipe(sourcemaps.init())
@@ -67,7 +62,7 @@ gulp.task('build-html', function () {
 gulp.task('build', function(callback) {
     return runSequence(
         'clean',
-        ['build-system', 'build-html', 'build-less', 'copy-toolkit', 'copy-jspm', 'copy-config'],
+        ['build-system', 'build-html', 'build-less', 'copy-jspm', 'copy-config'],
         callback
     );
 });

@@ -19,9 +19,21 @@
   </section>
 
   <section show.bind="isComplete">
-    Finished...
-    <br>
-    <button class="primary" click.trigger="reset()">Reset</button>
+
+    <h3>Form contents</h3>
+
+    Name: ${wizard.person.fullname}<br>
+
+    Favourite vertebrate: ${wizard.person.favouriteVertebrateClass.type}<br>
+
+    Favourite ${wizard.person.favouriteVertebrateClass.label} : ${wizard.person.favouriteVertebrateType}<br>
+
+    Agreed to terms and conditions: ${wizard.person.agreeToTerms}<br>
+
+    Agreed to sell kidney: ${wizard.person.agreeToSellKidney}<br><br>
+
+    <button class="primary" click.trigger="restart()">Start again</button>
+
   </section>
 
 </template>

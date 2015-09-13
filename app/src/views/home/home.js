@@ -11,7 +11,7 @@ export class Home {
       new Step(2, 'Favourite animals', 'wizard-step-2'),
       new Step(3, 'Terms and conditions', 'wizard-step-3')
     ];
-    this.reset();
+    this.restart();
   }
 
   nextStep() {
@@ -47,7 +47,7 @@ export class Home {
     this.nextStep();
   }
 
-  reset() {
+  restart() {
     this.isComplete = false;
     this.activeStep = this.steps[0];
   }

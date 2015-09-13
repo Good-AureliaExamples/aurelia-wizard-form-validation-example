@@ -1,4 +1,4 @@
-import {inject} from 'aurelia-framework';
+import {computedFrom} from 'aurelia-framework';
 
 export class Person {
   forename = '';
@@ -7,4 +7,9 @@ export class Person {
   favouriteVertebrateType = '';
   agreeToTerms = false;
   agreeToSellKidney = false;
+
+  @computedFrom('forename', 'surname')
+  get fullname() {
+    return `${this.forename} ${this.surname}`;
+  }
 }

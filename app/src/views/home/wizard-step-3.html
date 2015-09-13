@@ -6,18 +6,27 @@
       <legend>The small print</legend>
 
       <div class="form-group">
-        <label for="agree-terms">I have read the terms and conditions</label>
-        <input id="agree-terms" type="checkbox" checked.bind="wizard.person.agreeToTerms" validate="person.agreeToTerms">
+        <label for="agree-terms">
+          <input id="agree-terms" type="checkbox" checked.bind="wizard.person.agreeToTerms" validate="person.agreeToTerms">
+          I have read the terms and conditions
+        </label>
       </div>
 
       <div class="form-group">
-        <label for="sell-kidney-yes">I agree to sell a kidney</label>
-        <input id="sell-kidney-yes" type="radio" checked.bind="wizard.person.agreeToSellKidney" model.bind="true">
+        <label for="sell-kidney-yes">
+          <input id="sell-kidney-yes" type="radio" checked.bind="wizard.person.agreeToSellKidney" model.bind="true" name="kidney-radio">
+          I agree to sell a kidney
+        </label>
 
-        <label for="sell-kidney-no">You can't have a kidney</label>
-        <input id="sell-kidney-no" type="radio" checked.bind="wizard.person.agreeToSellKidney" model.bind="false"
-               validate="person.agreeToSellKidney">
+        <label for="sell-kidney-no">
+          <input id="sell-kidney-no" type="radio" checked.bind="wizard.person.agreeToSellKidney" model.bind="false"
+                 validate="person.agreeToSellKidney" name="kidney-radio">
+          No! You can't have my kidney</label>
       </div>
+
+      <p show.bind="!wizard.validationStep3.result.isValid &&
+        wizard.validationStep3.result.properties['person.agreeToTerms'].isDirty && wizard.validationStep3.result.properties['person.agreeToSellKidney'].isDirty"
+         class="${!wizard.validationStep3.result.isValid ? 'has-warning' : ''}">* You must agree to all the terms and conditions</p>
 
     </fieldset>
 

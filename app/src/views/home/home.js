@@ -27,8 +27,8 @@ export class Home {
   }
 
   previousStep() {
-    this.wizard.showValidationErrors = false;
     if (this.activeStep.id !== 1) {
+      this.wizard['validationStep' + this.activeStep.id].clear();
       this.activeStep = this.steps[this.activeStep.id - 2];
     }
   }

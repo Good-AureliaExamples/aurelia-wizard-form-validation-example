@@ -25,3 +25,5 @@ export const vertebrates = [
     examples: ['frog', 'toad', 'newt', 'axolotl']
   }
 ];
+
+export const countries = ['UK', 'USA', 'Other'];

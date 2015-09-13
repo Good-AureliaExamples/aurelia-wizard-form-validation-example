@@ -1,7 +1,5 @@
 <template>
 
-  <h2 title.bind="activeStep.title"></h2>
-
   <section show.bind="!isComplete">
 
     <form class="pure-form pure-form-stacked">
@@ -11,6 +9,7 @@
       <div>
         <button click.trigger="previousStep()" disabled.bind="isFirstPage">Previous</button>
         <button click.trigger="nextStep()" disabled.bind="isLastPage">Next</button>
+        <br><br>
         <button click.trigger="finish()" show.bind="isLastPage">Submit</button>
       </div>
 
@@ -20,19 +19,32 @@
 
   <section show.bind="isComplete">
 
-    <h3>Form contents</h3>
+    <h2 class="sub-heading">Form contents</h2>
 
-    Name: ${wizard.person.fullname}<br>
+    <ul>
+      <li>
+        <strong>Name:</strong> ${wizard.person.fullname}
+      </li>
 
-    Favourite class of vertebrate: ${wizard.person.favouriteVertebrateClass.type}<br>
+      <li>
+        <strong>Favourite class of vertebrate:</strong> ${wizard.person.favouriteVertebrateClass.type}
+      </li>
 
-    Favourite type of ${wizard.person.favouriteVertebrateClass.label} : ${wizard.person.favouriteVertebrateType}<br>
+      <li>
+        <strong>Favourite type of ${wizard.person.favouriteVertebrateClass.label}:</strong>
+        ${wizard.person.favouriteVertebrateType}
+      </li>
 
-    Agreed to terms and conditions: ${wizard.person.agreeToTerms}<br>
+      <li>
+        <strong>Agreed to terms and conditions:</strong> ${wizard.person.agreeToTerms}
+      </li>
 
-    Agreed to sell kidney: ${wizard.person.agreeToSellKidney}<br><br>
+      <li>
+        <strong>Agreed to sell kidney:</strong> ${wizard.person.agreeToSellKidney}
+      </li>
+    </ul>
 
-    <button class="primary" click.trigger="restart()">Start again</button>
+    <button click.trigger="restart()">Start again</button>
 
   </section>
 

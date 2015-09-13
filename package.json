@@ -1,5 +1,5 @@
 {
-  "name": "cbs-assurance-view-3",
+  "name": "aurelia-wizard-form-validation-example",
   "version": "1.0.0",
   "scripts": {
     "lint": "eslint ./app/src"

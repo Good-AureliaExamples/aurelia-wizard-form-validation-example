@@ -26,4 +26,4 @@ export const vertebrates = [
   }
 ];
 
-export const countries = ['UK', 'USA', 'Other'];
+export const countries = ['UK', 'USA', 'Other']; // eslint-disable-line one-var

@@ -8,7 +8,6 @@ import {vertebrates, countries} from 'src/views/home/data';
 export class Wizard {
 
   constructor(validation) {
-
     this.validation = validation;
     this.vertebrates = vertebrates;
     this.countries = countries;
@@ -38,7 +37,7 @@ export class Wizard {
       .isNotEmpty()
 
       .ensure('address.houseName', (config) => {
-        config.computedFrom(['address.houseNumber'])
+        config.computedFrom(['address.houseNumber']);
       })
       .if(() => {
         return !this.address.houseNumber;
@@ -54,7 +53,7 @@ export class Wizard {
       .endIf()
 
       .ensure('address.houseNumber', (config) => {
-        config.computedFrom(['address.houseName'])
+        config.computedFrom(['address.houseName']);
       })
       .if(() => {
         return !this.address.houseName;

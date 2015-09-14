@@ -35,4 +35,12 @@ export class WizardStep2 {
       return false;
     });
   }
+
+  attached() {
+    // reset validation flags to prevent initial validation error appearing when
+    // favouriteVertebrateClass has triggered a change in favouriteVertebrateType
+    let favType = this.wizard.validationStep2.result.properties['person.favouriteVertebrateType'];
+    favType.isValid = false;
+    favType.isDirty = false;
+  }
 }

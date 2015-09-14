@@ -54,12 +54,10 @@ export class Home {
 
   validateStep(step) {
     let key = 'validationStep' + step.id;
-    return this.wizard[key].validate().then(() => {
-      return true;
-    }, (err) => {
-      console.log('form data is bad...', err); // eslint-disable-line no-console
-      return false;
-    });
+    return this.wizard[key].validate().then(
+      () => true,
+      () => false
+    );
   }
 }
 

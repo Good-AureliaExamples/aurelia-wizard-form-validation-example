@@ -28,12 +28,10 @@ export class WizardStep2 {
   }
 
   checkHouseIsValid() {
-    return this.wizard.validationStep2.validate().then(() => {
-      return true;
-    }, (err) => {
-      console.log('form data is bad...', err); // eslint-disable-line no-console
-      return false;
-    });
+    return this.wizard.validationStep2.validate().then(
+      () => true,
+      () => false
+    );
   }
 
   attached() {

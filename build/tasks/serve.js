@@ -7,7 +7,7 @@ var browserSync = require('browser-sync');
 
 gulp.task('serve', ['build'], function(done) {
     browserSync({
-        open: false,
+        open: true,
         port: 9000,
         server: {
             baseDir: ['./dist'],
@@ -21,7 +21,7 @@ gulp.task('serve', ['build'], function(done) {
 
 gulp.task('serve-bundled', ['build-bundle'], function(done) {
     browserSync({
-        open: false,
+        open: true,
         port: 9001,
         server: {
             baseDir: ['./deploy'],

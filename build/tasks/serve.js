@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
+var modRewrite  = require('connect-modrewrite');
 
 // this task utilizes the browsersync plugin
 // to create a dev server instance
@@ -11,10 +12,14 @@ gulp.task('serve', ['build'], function(done) {
         port: 9000,
         server: {
             baseDir: ['./dist'],
-            middleware: function (req, res, next) {
+            middleware: [
+              modRewrite([
+                '^/myapp/mypath/something/(.*)$ /$1'
+              ]),
+              function (req, res, next) {
                 res.setHeader('Access-Control-Allow-Origin', '*');
                 next();
-            }
+            }]
         }
     }, done);
 });

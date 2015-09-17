@@ -77,7 +77,7 @@ gulp.task('build', function(callback) {
 
 gulp.task('serve', ['build'], function(done) {
   browserSync({
-    open: false,
+    open: true,
     port: 9000,
     server: {
       baseDir: ['./dist'],

@@ -15,29 +15,27 @@ export class WizardStep2 {
 
   houseNameChanged(newValue) {
     this.wizard.address.houseName = newValue;
-    if (this.wizard.validationStep2.result.properties['address.houseName'].isDirty) {
+    if (this.wizard.validationStep2b.result.properties['houseName'].isDirty) {
       this.checkHouseIsValid();
     }
   }
 
   houseNumberChanged(newValue) {
     this.wizard.address.houseNumber = newValue;
-    if (this.wizard.validationStep2.result.properties['address.houseNumber'].isDirty) {
+    if (this.wizard.validationStep2b.result.properties['houseNumber'].isDirty) {
       this.checkHouseIsValid();
     }
   }
 
   checkHouseIsValid() {
-    return this.wizard.validationStep2.validate().then(
+    return this.wizard.validationStep2b.validate().then(
       () => true,
       () => false
     );
   }
 
   attached() {
-    // reset validation flags to prevent initial validation error appearing when
-    // favouriteVertebrateClass has triggered a change in favouriteVertebrateType
-    let favType = this.wizard.validationStep2.result.properties['person.favouriteVertebrateType'];
+    let favType = this.wizard.validationStep2a.result.properties['favouriteVertebrateType'];
     favType.isValid = false;
     favType.isDirty = false;
   }

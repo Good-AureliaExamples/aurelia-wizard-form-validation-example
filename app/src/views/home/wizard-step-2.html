@@ -1,6 +1,6 @@
 <template>
 
-  <section validate.bind="wizard.validationStep2">
+  <section validate.bind="wizard.validationStep2a">
 
     <fieldset>
       <legend>Favourites</legend>
@@ -8,7 +8,7 @@
       <div class="form-group">
         <label for="type">Favourite type of ${wizard.person.favouriteVertebrateClass.label}</label>
         <select id="type" value.bind="wizard.person.favouriteVertebrateType"
-                validate="person.favouriteVertebrateType">
+                validate="favouriteVertebrateType">
           <option value="">Select...</option>
           <option repeat.for="type of wizard.person.favouriteVertebrateClass.examples">${type}</option>
         </select>
@@ -16,32 +16,36 @@
 
     </fieldset>
 
+  </section>
+
+  <section validate.bind="wizard.validationStep2b">
+
     <fieldset>
       <legend>Address</legend>
 
       <div class="form-group">
         <label for="houseName">House name</label>
-        <input id="houseName" placeholder="house name" value.bind="houseName" validate="address.houseName">
+        <input id="houseName" placeholder="house name" value.bind="houseName" validate="houseName">
       </div>
 
       <div class="form-group">
         <label for="houseNumber">House number</label>
-        <input id="houseNumber" placeholder="house number" value.bind="houseNumber" validate="address.houseNumber">
+        <input id="houseNumber" placeholder="house number" value.bind="houseNumber" validate="houseNumber">
       </div>
 
       <div class="form-group">
         <label for="street">Street</label>
-        <input id="street" placeholder="street" value.bind="wizard.address.street" validate="address.street">
+        <input id="street" placeholder="street" value.bind="wizard.address.street" validate="street">
       </div>
 
       <div class="form-group">
         <label for="town">Town</label>
-        <input id="town" placeholder="town" value.bind="wizard.address.town" validate="address.town">
+        <input id="town" placeholder="town" value.bind="wizard.address.town" validate="town">
       </div>
 
       <div class="form-group">
         <label for="country">Country</label>
-        <select id="country" value.bind="wizard.address.country" validate="address.country">
+        <select id="country" value.bind="wizard.address.country" validate="country">
           <option value="">Select...</option>
           <option repeat.for="country of wizard.countries">${country}</option>
         </select>
@@ -49,7 +53,7 @@
 
       <div class="form-group">
         <label for="postcode">Postcode</label>
-        <input id="postcode" placeholder="postcode" value.bind="wizard.address.postcode" validate="address.postcode">
+        <input id="postcode" placeholder="postcode" value.bind="wizard.address.postcode" validate="postcode">
       </div>
 
     </fieldset>

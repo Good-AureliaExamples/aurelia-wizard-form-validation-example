@@ -7,7 +7,7 @@
 
       <div class="form-group">
         <label for="agree-terms">
-          <input id="agree-terms" type="checkbox" checked.bind="wizard.person.agreeToTerms" validate="person.agreeToTerms">
+          <input id="agree-terms" type="checkbox" checked.bind="wizard.person.agreeToTerms" validate="agreeToTerms">
           I have read the terms and conditions
         </label>
       </div>
@@ -20,12 +20,12 @@
 
         <label for="sell-kidney-no">
           <input id="sell-kidney-no" type="radio" checked.bind="wizard.person.agreeToSellKidney" model.bind="false"
-                 validate="person.agreeToSellKidney" name="kidney-radio">
+                 validate="agreeToSellKidney" name="kidney-radio">
           No! You can't have my kidney</label>
       </div>
 
       <p show.bind="!wizard.validationStep3.result.isValid &&
-        wizard.validationStep3.result.properties['person.agreeToTerms'].isDirty && wizard.validationStep3.result.properties['person.agreeToSellKidney'].isDirty"
+        wizard.validationStep3.result.properties['agreeToTerms'].isDirty && wizard.validationStep3.result.properties['agreeToSellKidney'].isDirty"
          class="${!wizard.validationStep3.result.isValid ? 'has-warning' : ''}">* You must agree to all the terms and conditions</p>
 
     </fieldset>

@@ -8,7 +8,7 @@ export class Home {
     this.wizard = wizard;
     this.steps = [
       new Step(1, 'Personal details', 'wizard-step-1'),
-      new Step(2, 'Favourite animals', 'wizard-step-2'),
+      new Step(2, 'Favourite vertebrate type and address', 'wizard-step-2', ['validationStep2a', 'validationStep2b']),
       new Step(3, 'Terms and conditions', 'wizard-step-3')
     ];
     this.restart();
@@ -27,10 +27,13 @@ export class Home {
   }
 
   previousStep() {
-    if (this.activeStep.id !== 1) {
-      this.wizard['validationStep' + this.activeStep.id].clear();
-      this.activeStep = this.steps[this.activeStep.id - 2];
-    }
+    let currentStep = this.activeStep.id - 1;
+
+    this.steps[currentStep].validations.forEach((item) => {
+      this.wizard[item].clear();
+    });
+
+    this.activeStep = this.steps[currentStep - 1];
   }
 
   @computedFrom('activeStep')
@@ -53,8 +56,17 @@ export class Home {
   }
 
   validateStep(step) {
-    let key = 'validationStep' + step.id;
-    return this.wizard[key].validate().then(
+    let promises;
+
+    if (step.id !== 2) {
+      promises = [this.wizard['validationStep' + step.id].validate()];
+    } else {
+      promises = [
+        this.wizard.validationStep2a.validate(),
+        this.wizard.validationStep2b.validate()
+      ];
+    }
+    return Promise.all(promises).then(
       () => true,
       () => false
     );
@@ -65,10 +77,12 @@ class Step {
   id = 0;
   title = '';
   path = '';
+  validations = [];
 
-  constructor(id, title, path) {
+  constructor(id, title, path, validations) {
     this.id = id;
     this.title = title;
     this.path = 'src/views/home/' + path;
+    this.validations = validations || 'validationStep' + id;
   }
 }

@@ -17,7 +17,7 @@ export class WizardStep1 {
 
     // reset validation flags to prevent initial validation error appearing when
     // favouriteVertebrateClass has triggered a change in favouriteVertebrateType
-    let t = this.wizard.validationStep2.result.properties['person.favouriteVertebrateType'];
+    let t = this.wizard.validationStep2a.result.properties['favouriteVertebrateType'];
     t.isValid = false;
     t.isDirty = false;
   }

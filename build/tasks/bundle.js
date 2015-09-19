@@ -31,7 +31,8 @@ config = {
         'github:aurelia/loader-default',
         'github:aurelia/history-browser',
         'github:aurelia/logging-console',
-        'github:aurelia/validation@0.3.0/resources/*'
+        'github:aurelia/validation@0.3.0/resources/*',
+        'github:aurelia/html-template-element@0.3.0'
       ],
       options: {
         inject: true,
@@ -53,7 +54,7 @@ gulp.task('copy-files', ['copy-aurelia-build-files'], function () {
 
 gulp.task('copy-deploy-jspm', function () {
   return gulp.src([
-    paths.tmp + 'app/jspm_packages/system.js*'
+    paths.tmp + 'app/jspm_packages/system*'
   ]).pipe(gulp.dest(paths.deploy + 'jspm_packages'));
 });
 

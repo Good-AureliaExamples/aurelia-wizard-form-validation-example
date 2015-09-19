@@ -19,7 +19,7 @@ config = {
       options: {
         inject: true,
         minify: true,
-        sourceMaps: true
+        sourceMaps: 'inline'
       }
     },
     "aurelia": {
@@ -37,7 +37,7 @@ config = {
       options: {
         inject: true,
         minify: true,
-        sourceMaps: true
+        sourceMaps: 'inline'
       }
     }
   }

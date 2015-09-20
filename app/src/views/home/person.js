@@ -1,6 +1,7 @@
-import {computedFrom, inject} from 'aurelia-framework';
+import {computedFrom, inject, transient} from 'aurelia-framework';
 import {Validation, ensure} from 'aurelia-validation';
 
+@transient()
 @inject(Validation)
 export class Person {
 

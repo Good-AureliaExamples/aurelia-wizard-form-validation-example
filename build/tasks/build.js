@@ -11,6 +11,7 @@ var less = require('gulp-less');
 var path = require('path');
 var LessPluginCleanCSS = require('less-plugin-clean-css');
 var cleancss = new LessPluginCleanCSS({ advanced: true });
+var notify = require("gulp-notify");
 
 // transpiles changed es6 files to SystemJS format
 // the plumber() call prevents 'pipe breaking' caused
@@ -18,7 +19,7 @@ var cleancss = new LessPluginCleanCSS({ advanced: true });
 // https://www.npmjs.com/package/gulp-plumber
 gulp.task('build-system', function () {
     return gulp.src(paths.source)
-        .pipe(plumber())
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(changed(paths.output, {extension: '.js'}))
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(to5(assign({}, compilerOptions, {modules:'system'})))

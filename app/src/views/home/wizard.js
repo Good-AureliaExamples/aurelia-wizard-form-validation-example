@@ -4,15 +4,15 @@ import {Person} from 'src/views/home/person';
 import {Address} from 'src/views/home/address';
 import {vertebrates, countries} from 'src/views/home/data';
 
-@inject(Validation)
+@inject(Person, Address, Validation)
 export class Wizard {
 
-  constructor(validation) {
+  constructor(person, address,  validation) {
     this.validation = validation;
     this.vertebrates = vertebrates;
     this.countries = countries;
-    this.person = new Person();
-    this.address = new Address();
+    this.person = person;
+    this.address = address;
 
     this.validationStep1 = this.setupValidatonStep1();
     this.validationStep2 = this.setupValidatonStep2();

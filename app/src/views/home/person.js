@@ -1,5 +1,6 @@
-import {computedFrom} from 'aurelia-framework';
+import {transient, computedFrom} from 'aurelia-framework';
 
+@transient()
 export class Person {
   forename = '';
   surname = '';

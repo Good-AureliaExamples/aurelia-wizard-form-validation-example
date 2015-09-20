@@ -32,6 +32,7 @@
     "gulp-expect-file": "0.0.7",
     "gulp-jshint": "^1.11.2",
     "gulp-less": "^3.0.3",
+    "gulp-notify": "^2.2.0",
     "gulp-open": "^1.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-protractor": "^1.0.0",

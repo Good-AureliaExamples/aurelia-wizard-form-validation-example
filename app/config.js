@@ -98,7 +98,7 @@ System.config({
       "aurelia-html-template-element": "github:aurelia/html-template-element@0.3.0",
       "aurelia-metadata": "github:aurelia/metadata@0.8.0",
       "aurelia-path": "github:aurelia/path@0.9.0",
-      "core-js": "github:zloirock/core-js@0.8.4"
+      "core-js": "npm:core-js@0.9.18"
     },
     "github:aurelia/logging-console@0.7.1": {
       "aurelia-logging": "github:aurelia/logging@0.7.0"

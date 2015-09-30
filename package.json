@@ -95,7 +95,7 @@
       "aurelia-templating-binding": "github:aurelia/templating-binding@^0.15.0",
       "aurelia-templating-resources": "github:aurelia/templating-resources@^0.15.2",
       "aurelia-templating-router": "github:aurelia/templating-router@^0.16.1",
-      "aurelia-validation": "github:aurelia/validation@^0.3.0",
+      "aurelia-validation": "github:aurelia/validation@^0.3.1",
       "core-js": "npm:core-js@^1.1.4",
       "lodash": "npm:lodash@^3.10.1",
       "moment": "github:moment/moment@^2.10.6",

@@ -10,9 +10,6 @@ Run:
 
 With thanks to https://github.com/PWKad/aurelia-samples/tree/master/src/routes/modal
 
-## Important.
-Until aurelia-validation is updated, you need to apply the patch file: validation-index.js.patch - this will modify file: /app/jspm_packages/github/aurelia/validation@0.3.0/index.js - to add in a missing export.
-
 ## Some notes...
 
 1.  this sample app does not follow the structure from the Aurelia Skeleton Navigation project

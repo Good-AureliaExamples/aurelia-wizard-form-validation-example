@@ -31,7 +31,7 @@ config = {
         'github:aurelia/loader-default',
         'github:aurelia/history-browser',
         'github:aurelia/logging-console',
-        'github:aurelia/validation@0.3.0/resources/*',
+        'github:aurelia/validation@0.3.1/resources/*',
         'github:aurelia/html-template-element@0.3.0'
       ],
       options: {

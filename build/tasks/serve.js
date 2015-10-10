@@ -26,7 +26,7 @@ gulp.task('serve', ['build'], function (done) {
   }, done);
 });
 
-gulp.task('serve-bundled', ['build'], function (done) {
+gulp.task('serve-bundled', ['bundle'], function (done) {
   browserSync({
     open: true,
     port: 9001,
